@@ -69,7 +69,7 @@ void loop() {
     last_second = second_;       
         
   }
-  // Prints time on serial monitor
+  // Prints time on the serial monitor
     Serial.print(hours);
     Serial.print(":");
     if (minutes < 10) {
@@ -78,7 +78,7 @@ void loop() {
     }
     else Serial.println(minutes);
     
-  // Prints time on LED Display  
+  // Prints time on the LED Display  
   display.showNumberDecEx(hours,  (0x80 >> 1), false, 2, 0); //Displays the hour value; (0x80 displays dots)
   display.showNumberDec(minutes, true, 2, 2); //Displays the minute value;  
   
