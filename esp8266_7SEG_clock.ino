@@ -8,8 +8,8 @@
 #include <Timezone.h>    // https://github.com/JChristensen/Timezone
 #include <TM1637Display.h>       // Include LED Display library
 
-const int CLK = 2; //CLK pin connected to TM1637 display from pin D4 NodeMCU or GPIO 2 ESP-01
-const int DIO = 0; //DIO pin connected to TM1637 display from pin D3 NodeMCU or GPIO 0 ESP-01
+const int CLK = 2; // pin D4 NodeMCU or GPIO 2 ESP-01
+const int DIO = 0; // pin D3 NodeMCU or GPIO 0 ESP-01 
 TM1637Display display(CLK, DIO); //init the display.
  
 const char *ssid     = "SSID"; //Replace with your Network ID
@@ -53,7 +53,7 @@ void setup() {
  
 void loop() {
  
-  delayPeriod = 59800; // Adjust the offline clock 1 minute duration and sync interval
+  delayPeriod = 59800; // Adjust the offline 1 minute delay duration and sync interval
   timeClient.update();
   unsigned long unix_epoch = CE.toLocal(timeClient.getEpochTime()); // timeClient.getEpochTime() Get Unix epoch time from the NTP server // CE.toLocal - Timezone + daylight saving correction from Timezone.h
  
