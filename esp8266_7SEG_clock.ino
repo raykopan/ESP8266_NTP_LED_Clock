@@ -12,8 +12,8 @@ const int CLK = 2; //CLK pin connected to TM1637 display from pin D4 NodeMCU or 
 const int DIO = 0; //DIO pin connected to TM1637 display from pin D3 NodeMCU or GPIO 0 ESP-01
 TM1637Display display(CLK, DIO); //init the display.
  
-const char *ssid     = "Raykopan"; //Replace with your Network ID
-const char *password = "internet"; //Replace with your Password
+const char *ssid     = "SSID"; //Replace with your Network ID
+const char *password = "password"; //Replace with your Password
 
 byte second_, minute_, hour_; 
 byte last_second = 60;
