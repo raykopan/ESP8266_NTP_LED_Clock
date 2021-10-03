@@ -1,9 +1,9 @@
 {
-  "iss": "https://dgc.digg.se/trust-service",
-  "id": "13f9da2d98e58a41a56e61c13a652600",
+  "iss": "",
+  "id": "",
   "exp": 1619220179,
   "iat": 1619133779,
-  "aud": [ "dgc-validators" ],
+  "aud": [ "" ],
   "dsc_trust_list": {
     "FR": {
       "eku": {
