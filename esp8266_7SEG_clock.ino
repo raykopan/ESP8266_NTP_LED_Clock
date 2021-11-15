@@ -79,7 +79,7 @@ void loop() {
     else Serial.println(minutes);
     
   // Prints time on the LED Display  
-  display.showNumberDecEx(hours,  (0x80 >> 1), false, 2, 0); //Displays the hour value; (0x80 displays dots)
+  display.showNumberDecEx(hours,  (0x80 >> 1), false, 2, 0); //Displays the hour value; (0x80 displays colon)
   display.showNumberDec(minutes, true, 2, 2); //Displays the minute value;  
   
   delay(delayPeriod); // 1 min.
