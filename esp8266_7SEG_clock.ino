@@ -27,9 +27,9 @@ int timeZone = 0; // Time zone hour correction, if Timezone.h used, timeZone = 0
 
 NTPClient timeClient(ntpUDP, "time.nist.gov", timeZone*3600, 60000); 
 
-// Central European Time (CET) - Timezone.h
-TimeChangeRule CEST = {"CEST", Last, Sun, Mar, 2, 120};     //  Summer Time
-TimeChangeRule CET = {"CET ", Last, Sun, Oct, 3, 60};       //  Standard Time
+// Time Change Rules
+TimeChangeRule CEST = {"CEST", Last, Sun, Mar, 3, 120};     // 120 EU Summer Time (UTC +3 Hours);  -240 (UTC -4 Hours)
+TimeChangeRule CET = {"CET ", Last, Sun, Oct, 4, 60};       // 60 EU Standard Time (UTC +2 Hours); -300 (UTC -5 Hours)
 Timezone CE(CEST, CET);
 
 void setup() {
