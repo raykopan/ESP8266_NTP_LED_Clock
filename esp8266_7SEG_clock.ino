@@ -19,7 +19,7 @@ byte second_, minute_, hour_;
 byte last_second = 60;
 int hours;
 int minutes;
-int delayPeriod;
+int delayPeriod = 59800; // Adjust the offline 1 minute delay duration and sync interval
 
 WiFiUDP ntpUDP;
  
@@ -53,7 +53,11 @@ void setup() {
  
 void loop() {
  
-  delayPeriod = 59800; // Adjust the offline 1 minute delay duration and sync interval
+ntpClock();  
+}
+
+void ntpClock(){
+ 
   timeClient.update();
   unsigned long unix_epoch = CE.toLocal(timeClient.getEpochTime()); // timeClient.getEpochTime() Get Unix epoch time from the NTP server // CE.toLocal - Timezone + daylight saving correction from Timezone.h
  
@@ -82,7 +86,7 @@ void loop() {
   display.showNumberDecEx(hours,  (0x80 >> 1), false, 2, 0); //Displays the hour value; (0x80 displays colon)
   display.showNumberDec(minutes, true, 2, 2); //Displays the minute value;  
   
-  delay(delayPeriod); // 1 min.
+  delay(delayPeriod); // Wait 1 min.
   
   // Offline time 
   minutes++;
@@ -90,6 +94,5 @@ void loop() {
     minutes = 0;
     hours++;
     if (hours == 24) hours = 0;
-  }
- 
+  } 
 }
