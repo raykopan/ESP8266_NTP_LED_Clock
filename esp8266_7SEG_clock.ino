@@ -12,8 +12,8 @@ const int CLK = 2; // pin D4 NodeMCU or GPIO 2 ESP-01
 const int DIO = 0; // pin D3 NodeMCU or GPIO 0 ESP-01 
 TM1637Display display(CLK, DIO); //init the display.
  
-const char *ssid     = "SSID"; //Replace with your Network ID
-const char *password = "password"; //Replace with your Password
+const char *ssid     = "YOUR_SSID"; //Replace with your Network ID
+const char *password = "your_password"; //Replace with your Password
 
 byte second_, minute_, hour_; 
 byte last_second = 60;
