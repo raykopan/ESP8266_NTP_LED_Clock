@@ -22,10 +22,7 @@ int minutes;
 int delayPeriod = 59800; // Adjust the offline 1 minute delay duration and sync interval
 
 WiFiUDP ntpUDP;
- 
-int timeZone = 0; // Time zone hour correction, if Timezone.h used, timeZone = 0;
-
-NTPClient timeClient(ntpUDP, "time.nist.gov", timeZone*3600, 60000); 
+NTPClient timeClient(ntpUDP, "time.nist.gov", 0, 60000); 
 
 // Time Change Rules
 TimeChangeRule CEST = {"CEST", Last, Sun, Mar, 3, 120};     // 120 EU Summer Time (UTC +3 Hours);  -240 (UTC -4 Hours)
